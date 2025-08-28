@@ -10,7 +10,7 @@
   /* panel bg */
   --text: #E0E0E0;
   /* main text */
-  --muted: #A0A0B0;
+  --muted: #ffffff;
   /* secondary text */
   --brand: #7127BA;
   /* primary */
@@ -271,29 +271,30 @@ nav a.active::after {
 /* ---------- Hero ---------- */
 .hero {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 100px;
-  align-items: top;
-  justify-content: space-between;
   padding: 48px 0 24px;
 }
 
 .hero-image {
-  flex: none;
-  width: 250px;
-  height: 250px;
+  width: clamp(150px, 50vw, 250px);
+  height: auto;
+  margin: 0 auto 28px;
+  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 28px; /* Space between image and content */
 }
 
 .hero-right-column {
-  flex: 1; /* Take up remaining space */
-  min-width: 300px; /* Minimum width for content to wrap */
+  flex: 1;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Space between hero-content and quick profile */
+  gap: 20px;
+  text-align: center;
 }
 
 .hero-content {
@@ -302,11 +303,12 @@ nav a.active::after {
 
 .profile-pic {
   width: 100%;
-  height: 100%;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--brand);
   box-shadow: 0 0 0 8px rgba(113, 39, 186, .2);
+  display: block;
+  margin: 0 auto;
 }
 
 .tag {
@@ -786,16 +788,6 @@ footer {
 /* ====================== MOBILE NAV (<=900px) ====================== */
 @media (max-width:900px) {}
 
-/* #bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-} */
-
 .hero {
   grid-template-columns: 1fr
 }
@@ -957,13 +949,20 @@ nav ul {
   }
 
   .hero-image {
-    margin-right: 0;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
   }
 
   .hero-right-column {
     flex: none;
     width: 100%;
+  }
+
+  .tribe-logo
+ {
+    width: 60px;
+  }
+  .jaffer-logo{
+    width: 100px;
   }
 }
 
