@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: stretch; /* Make children stretch vertically */
+    min-height: 100vh;
+    margin: 0;
+
+
+}
+
+.login-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 30px;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Increased width to cover more of the left side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.brand-logo::after {
+    content: '#';
+    color: #7127BA; /* A light purple color for the hash */
+}
+
+.login-card h2, .portfolio-page h1 {
+    display: none; /* Hide the h2 as we have a logo now */
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    display: none; /* Hide the label as we're using placeholders or icons */
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* Removed border-bottom and padding-bottom from here */
+}
+
+.input-wrapper input[type="text"],
+.input-wrapper input[type="password"] {
+    width: 100%;
+    padding: 10px 10px 5px 10px; /* Adjust padding to make space for the border */
+    border: none;
+    border-bottom: 2px solid #777; /* The line to indicate where to write */
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 0; /* Remove border-radius for a clean line */
+}
+
+.input-wrapper input[type="text"]:focus,
+.input-wrapper input[type="password"]:focus {
+    outline: none;
+    border-color: #7127BA; /* Highlight color on focus */
+    box-shadow: none; /* Remove box-shadow on focus if any */
+}
+
+/* Autofill styling */
+.input-wrapper input:-webkit-autofill,
+.input-wrapper input:-webkit-autofill:hover,
+.input-wrapper input:-webkit-autofill:focus,
+.input-wrapper input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: #000000 !important;
+    border-bottom: 2px solid #777 !important; /* Ensure the bottom border is visible for autofill */
+}
+
+.input-wrapper .fas {
+    color: #fff; /* White icons for better visibility */
+    font-size: 18px;
+    position: absolute;
+    right: 2px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.input-wrapper .fas.fa-user {
+    right: 5px; /* Adjust position for user icon */
+}
+
+button {
+    background: rgba(113, 39, 186, 0.3); /* Semi-transparent purple */
+    color: #fff; /* White text for contrast */
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 30px;
+    backdrop-filter: blur(6px); /* Glass effect */
+    box-shadow: 0 4px 12px rgba(113, 39, 186, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect */
+  button:hover {
+    background: rgba(113, 39, 186, 0.9); /* Slightly less transparent */
+    box-shadow: 0 6px 18px rgba(113, 39, 186, 0.3);
+    transform: translateY(-2px); /* Lift on hover */
+  }
+  
+  /* Active/Click effect */
+  button:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 3px 8px rgba(113, 39, 186, 0.25);
+  }
+  
+
+.login-error-message {
+    color: #ff6b6b;
+    margin-top: 15px;
+}
+
+/* Ensure the video remains in the background */
+.hero-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}

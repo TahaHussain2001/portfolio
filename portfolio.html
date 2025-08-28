@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-page="portfolio">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shaikh Taha Hussain — Portfolio</title>
+  <meta name="description" content="Portfolio of Shaikh Taha Hussain — Aspiring Frontend Developer based in Karachi" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://example.com/portfolio" />
+  <meta name="theme-color" content="#7127BA" />
+  <meta property="og:title" content="Shaikh Taha Hussain — Portfolio" />
+  <meta property="og:description" content="Aspiring Frontend Developer based in Karachi. HTML, CSS, JS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/portfolio" />
+  <meta property="og:image" content="https://example.com/og-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [{
+      "@type": "WebSite",
+      "name": "Shaikh Taha Hussain — Portfolio",
+      "url": "https://example.com/portfolio",
+      "inLanguage": "en"
+    },{
+      "@type": "Person",
+      "name": "Shaikh Taha Hussain",
+      "jobTitle": "Aspiring Frontend Developer",
+      "url": "https://example.com/portfolio",
+      "email": "mailto:tahah2269@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Karachi",
+        "addressCountry": "PK"
+      },
+      "knowsAbout": ["HTML", "CSS", "JavaScript", "Java", "C++", "Responsive Design", "ReactJS"],
+      "sameAs": []
+    }]
+  }
+  </script>
+</head>
+<body data-page="portfolio">
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="https://www.pexels.com/download/video/3163534/" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Scroll progress -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+  <noscript>
+    <style>#scrollProgress{display:none}</style>
+  </noscript>
+
+  <header class="site" role="banner">
+    <div class="container nav" id="nav">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <div class="avatar" aria-hidden="true"><img src="Assets/Images/my-image.png" alt="HTML Logo" class="profile-logo"></div>
+        <div>
+          <!-- Single H1 on the page = Your name -->
+          <h1 id="site-title">Shaikh Taha Hussain</h1>
+          <span class="muted">Aspiring Frontend Developer</span>
+        </div>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about"      data-spy>About</a></li>
+          <li><a href="#education"  data-spy>Education</a></li>
+          <li><a href="#experience" data-spy>Experience</a></li>
+          <li><a href="#projects"   data-spy>Projects</a></li>
+          <li><a href="#skills"     data-spy>Skills</a></li>
+          <li><a href="#contact"    data-spy>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <button id="logoutButton" class="btn" type="button" title="Logout">Logout</button>
+        <button class="menu" id="menuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="nav">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <!-- Hero / Intro -->
+    <section class="hero reveal" id="top" aria-labelledby="hero-heading">
+      <div class="hero-image">
+        <img src="Assets/Images/my-image.png" alt="Profile Picture" class="profile-pic">
+      </div>
+      <div class="hero-right-column">
+        <div class="hero-content">
+          <span class="tag">📍 Karachi, Pakistan • Open to Internships</span>
+          <h2 id="hero-heading">Hello! I'm Taha — I build clean, responsive UIs.</h2>
+          <p class="muted">
+            Motivated Computer Science student eager to apply HTML, CSS and JavaScript in a collaborative tech environment.
+            I love turning designs into fast, accessible interfaces and I'm actively seeking an internship or entry-level role.
+          </p>
+          <div class="quick" role="list">
+            <a class="chip" role="listitem" href="tel:+923363509415" rel="nofollow">📞 +92 336 350****</a>
+            <a class="chip" role="listitem" href="mailto:tahah2269@gmail.com">📧 tahah****@gmail.com</a>
+            <span class="chip" role="listitem">DHA Suffa University (2022–2026)</span>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- About / Objective -->
+    <aside class="panel" aria-labelledby="quick-profile">
+      <div class="section-head"><h3 id="quick-profile">Quick Profile</h3></div>
+      <div class="rule" aria-hidden="true"></div>
+      <div style="display:grid; gap:10px; margin-top:12px">
+        <div class="tags" role="list" aria-label="Core skills">
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/html-5_919827.png" alt="HTML Logo" class="skill-logo">HTML</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/css_919826.png" alt="CSS Logo" class="skill-logo">CSS</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/js_5968292.png" alt="JavaScript Logo" class="skill-logo">JavaScript (Basic)</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/java_226777.png" alt="Java Logo" class="skill-logo">Java (Basic)</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/c_6132222.png" alt="Java Logo" class="skill-logo">C++</span>
+        </div>
+        <div class="tags" role="list" aria-label="Design & tools">
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/photoshop.png" alt="Adobe Photoshop Logo" class="skill-logo">Adobe Photoshop</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/premiere-pro_9814226.png" alt="Premiere Pro Logo" class="skill-logo">Premiere Pro</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/office_732222.png" alt="MS Office Logo" class="skill-logo">MS Office</span>
+        </div>
+        <div class="tags" role="list" aria-label="Networking">
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">Networking: IP • VLANs • DHCP • DNS • FTP</span>
+        </div>
+        <div class="tags" role="list" aria-label="Currently learning">
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/github.png" alt="Git Logo" class="skill-logo">Currently Learning: Git</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/responsive.png" alt="Responsive Design Logo" class="skill-logo">Responsive Design</span>
+          <span class="tag-pill" role="listitem"><img src="Assets/Images/react.png" alt="ReactJS Logo" class="skill-logo">ReactJS Fundamentals</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Education -->
+    <section id="education" class="reveal" aria-labelledby="education-heading">
+      <div class="section-head"><h2 id="education-heading">Education</h2></div>
+      <div class="grid" role="list">
+        <article class="card three-col tilt" role="listitem" aria-labelledby="edu-bs-title">
+          <img src="Assets/Images/DHA Suffa University_idzOXbKIJG_0.png" alt="DHA Suffa University Logo" class="edu-logo">
+          <h3 id="edu-bs-title">BS Computer Science</h3>
+          <p>DHA Suffa University, Karachi</p>
+          <p class="muted" aria-label="Duration">Oct 2022 – Jul 2026</p>
+        </article>
+        <article class="card three-col tilt" role="listitem" aria-labelledby="edu-alevels-title">
+          <img src="Assets/Images/whales.png" alt="Whales College Logo" class="edu-logo">
+          <h3 id="edu-alevels-title">A-Levels (Pre-Engineering)</h3>
+          <p>Whales College, Karachi</p>
+          <p class="muted">Aug 2018 – Oct 2021</p>
+        </article>
+        <article class="card three-col tilt" role="listitem" aria-labelledby="edu-olevels-title">
+          <img src="Assets/Images/saint patrick.png" alt="Saint Patrick’s High School Logo" class="school-logo">
+          <h3 id="edu-olevels-title">O-Levels (Science)</h3>
+          <p>Saint Patrick’s High School, Karachi</p>
+          <p class="muted">Aug 2016 – Aug 2018</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="reveal" aria-labelledby="experience-heading">
+      <div class="section-head"><h2 id="experience-heading">Experience</h2></div>
+      <div class="grid" role="list">
+        <article class="card two-col tilt" role="listitem" aria-labelledby="exp-freelance-title">
+          <img src="Assets/Images/freelancing_18236557.png" alt="Freelancing Logo" class="exp-logo">
+          <h3 id="exp-freelance-title">Freelance Video & Photo Editor</h3>
+          <p class="muted">2022 – 2023</p>
+          <ul class="timeline" aria-label="Key responsibilities">
+            <li class="tl-item">Edited visual content using Adobe Premiere Pro and Photoshop.</li>
+            <li class="tl-item">Managed social media projects with a focus on quality and deadlines.</li>
+          </ul>
+        </article>
+        <article class="card two-col tilt" role="listitem" aria-labelledby="exp-tribe-title">
+          <img src="Assets/Images/tribe-consulting.png" alt="Tribe Consulting Logo" class="tribe-logo">
+          <h3 id="exp-tribe-title">Customer Support Executive — Tribe Consulting</h3>
+          <p class="muted">May 2021 – Jul 2021</p>
+          <ul class="timeline" aria-label="Key responsibilities">
+            <li class="tl-item">Responded to customer queries via phone calls, improving problem-solving and communication skills.</li>
+            <li class="tl-item">Maintained service quality standards through collaboration and support.</li>
+          </ul>
+        </article>
+        <article class="card two-col tilt" role="listitem" aria-labelledby="exp-tribe-title">
+          <img src="https://www.jaffer.com/images/logo-modified.png" alt="Tribe Consulting Logo" class="jaffer-logo">
+          <h3 id="exp-tribe-title">Customer Support Executive — Tribe Consulting</h3>
+          <p class="muted">May 2021 – Jul 2021</p>
+          <ul class="timeline" aria-label="Key responsibilities">
+            <li class="tl-item">Designed and developed user-friendly portals for Jaffer Brothers to streamline internal workflows and improve accessibility.</li>
+            <li class="tl-item">Created custom digital forms for data collection and process automation, enhancing efficiency and accuracy.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="reveal" aria-labelledby="projects-heading">
+      <div class="section-head"><h2 id="projects-heading">Projects</h2></div>
+      <div class="grid" role="list">
+        <article class="card two-col tilt" role="listitem" aria-labelledby="proj-hospital-title">
+          <h3 id="proj-hospital-title">Hospital Website</h3>
+          <p class="muted">HTML • CSS • JavaScript</p>
+          <p>Developed a responsive frontend with a contact form, service pages, and doctor profiles.</p>
+          <div class="tags" role="list">
+            <span class="tag-pill" role="listitem">Responsive UI</span>
+            <span class="tag-pill" role="listitem">Forms</span>
+            <span class="tag-pill" role="listitem">Accessibility</span>
+          </div>
+        </article>
+        <article class="card two-col tilt" role="listitem" aria-labelledby="proj-hms-title">
+          <h3 id="proj-hms-title">Hospital Management System (C++)</h3>
+          <p class="muted">Console application</p>
+          <p>Built for managing appointments, staff, and patient data.</p>
+          <div class="tags" role="list">
+            <span class="tag-pill" role="listitem">C++</span>
+            <span class="tag-pill" role="listitem">Data Structures</span>
+            <span class="tag-pill" role="listitem">CLI</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="reveal" aria-labelledby="skills-heading">
+      <div class="section-head"><h2 id="skills-heading">Skills</h2></div>
+      <div class="grid">
+        <article class="card three-col" aria-labelledby="skills-fe-title">
+          <h3 id="skills-fe-title">Frontend</h3>
+          <div class="tags" role="list" aria-label="Frontend technologies">
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/html-5_919827.png" alt="HTML Logo" class="skill-logo">HTML</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/css_919826.png" alt="CSS Logo" class="skill-logo">CSS</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/js_5968292.png" alt="JavaScript Logo" class="skill-logo">JavaScript (Basic)</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/java_226777.png" alt="Java Logo" class="skill-logo">Java (Basic)</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/c_6132222.png" alt="Java Logo" class="skill-logo">C++</span>
+          </div>
+        </article>
+        <article class="card three-col" aria-labelledby="skills-tools-title">
+          <h3 id="skills-tools-title">Design &amp; Tools</h3>
+          <div class="tags" role="list" aria-label="Design tools">
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/photoshop.png" alt="Adobe Photoshop Logo" class="skill-logo">Adobe Photoshop</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/premiere-pro_9814226.png" alt="Premiere Pro Logo" class="skill-logo">Premiere Pro</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/office_732222.png" alt="MS Office Logo" class="skill-logo">MS Office</span>
+          </div>
+        </article>
+        <article class="card three-col" aria-labelledby="skills-net-title">
+          <h3 id="skills-net-title">Networking (Basic)</h3>
+          <div class="tags" role="list" aria-label="Networking topics">
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">IP Addressing</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">Subnetting</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">Routing</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">VLANs</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">DHCP</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">DNS</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">FTP</span>
+          </div>
+        </article>
+      </div>
+      <div class="grid" style="margin-top:12px">
+        <article class="card" aria-labelledby="soft-skills-title">
+          <h3 id="soft-skills-title">Soft Skills &amp; Interests</h3>
+          <p class="muted">Communication • Teamwork • Public Speaking • Fast Typing • Web Design • Fitness • Gaming</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="reveal" aria-labelledby="contact-heading">
+      <div class="section-head"><h2 id="contact-heading">Contact</h2></div>
+      <div class="grid">
+        <address class="card two-col" style="font-style: normal" aria-label="Contact details">
+          <p><strong>Address:</strong> Gulistan-e-Johar, Karachi</p>
+          <p><strong>Email:</strong> <a href="mailto:tahah2269@gmail.com">tahah****@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+923363509415" rel="nofollow">+92 336 350****</a></p>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <nav aria-label="Footer">
+        <div class="links">
+          <a href="mailto:tahah2269@gmail.com">Email</a>
+          <a href="tel:+923363509415" rel="nofollow">Call</a>
+        </div>
+      </nav>
+      <p style="margin-top:10px">© <span id="year"></span> Shaikh Taha Hussain. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+  <noscript><style>#toTop{display:none}</style></noscript>
+
+  <script src="script.js" defer></script>
+  <script>
+    // Close mobile menu after clicking a nav link
+    document.querySelectorAll('nav a[data-spy]').forEach(a => {
+      a.addEventListener('click', () => {
+        const nav = document.getElementById('nav');
+        nav.classList.remove('open');
+      });
+    });
+  </script>
+  
+</body>
+</html>
