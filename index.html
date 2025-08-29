@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" data-page="portfolio">
 <head>
+  <!-- Required meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Title & basic SEO -->
   <title>Shaikh Taha Hussain — Portfolio</title>
   <meta name="description" content="Portfolio of Shaikh Taha Hussain — Aspiring Frontend Developer based in Karachi" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Canonical URL for SEO -->
   <link rel="canonical" href="https://example.com/portfolio" />
+
+  <!-- Browser UI color (mobile) -->
   <meta name="theme-color" content="#7127BA" />
+
+  <!-- Open Graph (Facebook/LinkedIn) -->
   <meta property="og:title" content="Shaikh Taha Hussain — Portfolio" />
   <meta property="og:description" content="Aspiring Frontend Developer based in Karachi. HTML, CSS, JS." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://example.com/portfolio" />
   <meta property="og:image" content="https://example.com/og-card.jpg" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured Data (Website + Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,27 +55,38 @@
   </script>
 </head>
 <body data-page="portfolio">
+  <!-- Fullscreen background video (muted/looped for ambience) -->
   <video autoplay muted loop playsinline id="bg-video">
+    <!-- NOTE: ensure this URL returns a direct MP4 stream -->
     <source src="https://www.pexels.com/download/video/3163534/" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Scroll progress -->
+  <!-- Slim progress bar at top that fills as you scroll -->
   <div id="scrollProgress" aria-hidden="true"></div>
   <noscript>
+    <!-- Hide progress if JS disabled -->
     <style>#scrollProgress{display:none}</style>
   </noscript>
 
+  <!-- Sticky site header: brand + primary navigation + mobile menu button -->
   <header class="site" role="banner">
     <div class="container nav" id="nav">
+      <!-- Brand / “home” anchor (scrolls to top) -->
       <a class="brand" href="#top" aria-label="Go to top">
-        <div class="avatar" aria-hidden="true"><img src="Assets/Images/my-image.png" alt="HTML Logo" class="profile-logo"></div>
+        <!-- Avatar image (decorative) -->
+        <div class="avatar" aria-hidden="true">
+          <!-- TODO: alt currently says "HTML Logo"—consider changing to your name/photo description -->
+          <img src="Assets/Images/my-image.png" alt="HTML Logo" class="profile-logo">
+        </div>
         <div>
-          <!-- Single H1 on the page = Your name -->
+          <!-- Main page heading (unique H1) -->
           <h1 id="site-title">Shaikh Taha Hussain</h1>
           <span class="muted">Aspiring Frontend Developer</span>
         </div>
       </a>
+
+      <!-- Primary navigation (in-page section links) -->
       <nav aria-label="Primary">
         <ul>
           <li><a href="#about"      data-spy>About</a></li>
@@ -71,43 +97,59 @@
           <li><a href="#contact"    data-spy>Contact</a></li>
         </ul>
       </nav>
+
+      <!-- CTA area: mobile Menu button (toggles .nav.open via JS in script.js) -->
       <div class="cta">
-        
+        <!-- aria-controls points to the container with the nav list -->
         <button class="menu" id="menuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="nav">Menu</button>
       </div>
     </div>
   </header>
 
+  <!-- Main content wrapper -->
   <main id="main" class="container" role="main">
-    <!-- Hero / Intro -->
+    <!-- HERO: intro block with avatar, headline, and quick contacts -->
     <section class="hero reveal" id="top" aria-labelledby="hero-heading">
       <div class="hero-image">
+        <!-- Accessible alt for profile photo -->
         <img src="Assets/Images/my-image.png" alt="Profile Picture" class="profile-pic">
       </div>
+
       <div class="hero-right-column">
         <div class="hero-content">
+          <!-- Small, pill-like tag -->
           <span class="tag">📍 Karachi, Pakistan • Open to Internships</span>
+
+          <!-- Secondary heading for main intro line -->
           <h2 id="hero-heading">Hello! I'm Taha — I build clean, responsive UIs.</h2>
+
+          <!-- Short objective/summary -->
           <p class="muted">
             Motivated Computer Science student eager to apply HTML, CSS and JavaScript in a collaborative tech environment.
             I love turning designs into fast, accessible interfaces and I'm actively seeking an internship or entry-level role.
           </p>
+
+          <!-- Quick contact chips (use role="list" for semantics) -->
           <div class="quick" role="list">
+            <!-- NOTE: numbers/emails are masked here -->
             <a class="chip" role="listitem" href="tel:+923363509415" rel="nofollow">📞 +92 336 350****</a>
             <a class="chip" role="listitem" href="mailto:tahah2269@gmail.com">📧 tahah****@gmail.com</a>
             <a class="chip" role="listitem" href="https://github.com/TahaHussain2001">💻 https://github.com/TahaHussain2001</a>
             <span class="chip" role="listitem">🏛️ DHA Suffa University (2022–2026)</span>
           </div>
         </div>
-        
+        <!-- (reserved area for any right-side widgets or CTAs if needed) -->
       </div>
     </section>
 
-    <!-- About / Objective -->
+    <!-- ABOUT / QUICK PROFILE: skills & tools as chips -->
     <aside class="panel" aria-labelledby="quick-profile">
       <div class="section-head"><h3 id="quick-profile">Quick Profile</h3></div>
       <div class="rule" aria-hidden="true"></div>
+
+      <!-- Simple grid using inline styles (could move to CSS) -->
       <div style="display:grid; gap:10px; margin-top:12px">
+        <!-- Core skills -->
         <div class="tags" role="list" aria-label="Core skills">
           <span class="tag-pill" role="listitem"><img src="Assets/Images/html-5_919827.png" alt="HTML Logo" class="skill-logo">HTML</span>
           <span class="tag-pill" role="listitem"><img src="Assets/Images/css_919826.png" alt="CSS Logo" class="skill-logo">CSS</span>
@@ -115,14 +157,20 @@
           <span class="tag-pill" role="listitem"><img src="Assets/Images/java_226777.png" alt="Java Logo" class="skill-logo">Java (Basic)</span>
           <span class="tag-pill" role="listitem"><img src="Assets/Images/c_6132222.png" alt="Java Logo" class="skill-logo">C++</span>
         </div>
+
+        <!-- Design & tools -->
         <div class="tags" role="list" aria-label="Design & tools">
           <span class="tag-pill" role="listitem"><img src="Assets/Images/photoshop.png" alt="Adobe Photoshop Logo" class="skill-logo">Adobe Photoshop</span>
           <span class="tag-pill" role="listitem"><img src="Assets/Images/premiere-pro_9814226.png" alt="Premiere Pro Logo" class="skill-logo">Premiere Pro</span>
           <span class="tag-pill" role="listitem"><img src="Assets/Images/office_732222.png" alt="MS Office Logo" class="skill-logo">MS Office</span>
         </div>
+
+        <!-- Networking -->
         <div class="tags" role="list" aria-label="Networking">
           <span class="tag-pill" role="listitem"><img src="Assets/Images/cisco packet (networking).png" alt="Networking Logo" class="skill-logo">Networking: IP • VLANs • DHCP • DNS • FTP</span>
         </div>
+
+        <!-- Currently learning -->
         <div class="tags" role="list" aria-label="Currently learning">
           <span class="tag-pill" role="listitem"><img src="Assets/Images/github.png" alt="Git Logo" class="skill-logo">Currently Learning: Git</span>
           <span class="tag-pill" role="listitem"><img src="Assets/Images/responsive.png" alt="Responsive Design Logo" class="skill-logo">Responsive Design</span>
@@ -131,9 +179,11 @@
       </div>
     </aside>
 
-    <!-- Education -->
+    <!-- EDUCATION section -->
     <section id="education" class="reveal" aria-labelledby="education-heading">
       <div class="section-head"><h2 id="education-heading">Education</h2></div>
+
+      <!-- Card grid of education items -->
       <div class="grid" role="list">
         <article class="card three-col tilt" role="listitem" aria-labelledby="edu-bs-title">
           <img src="Assets/Images/DHA Suffa University_idzOXbKIJG_0.png" alt="DHA Suffa University Logo" class="edu-logo">
@@ -141,12 +191,14 @@
           <p>DHA Suffa University, Karachi</p>
           <p class="muted" aria-label="Duration">Oct 2022 – Jul 2026</p>
         </article>
+
         <article class="card three-col tilt" role="listitem" aria-labelledby="edu-alevels-title">
           <img src="Assets/Images/whales.png" alt="Whales College Logo" class="edu-logo">
           <h3 id="edu-alevels-title">A-Levels (Pre-Engineering)</h3>
           <p>Whales College, Karachi</p>
           <p class="muted">Aug 2018 – Oct 2021</p>
         </article>
+
         <article class="card three-col tilt" role="listitem" aria-labelledby="edu-olevels-title">
           <img src="Assets/Images/saint patrick.png" alt="Saint Patrick’s High School Logo" class="school-logo">
           <h3 id="edu-olevels-title">O-Levels (Science)</h3>
@@ -156,19 +208,22 @@
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- EXPERIENCE section -->
     <section id="experience" class="reveal" aria-labelledby="experience-heading">
       <div class="section-head"><h2 id="experience-heading">Experience</h2></div>
+
       <div class="grid" role="list">
         <article class="card two-col tilt" role="listitem" aria-labelledby="exp-freelance-title">
           <img src="Assets/Images/freelancing_18236557.png" alt="Freelancing Logo" class="exp-logo">
           <h3 id="exp-freelance-title">Freelance Video & Photo Editor</h3>
           <p class="muted">2022 – 2023</p>
+          <!-- Bulleted responsibilities with timeline styling -->
           <ul class="timeline" aria-label="Key responsibilities">
             <li class="tl-item">Edited visual content using Adobe Premiere Pro and Photoshop.</li>
             <li class="tl-item">Managed social media projects with a focus on quality and deadlines.</li>
           </ul>
         </article>
+
         <article class="card two-col tilt" role="listitem" aria-labelledby="exp-tribe-title">
           <img src="Assets/Images/tribe-consulting.png" alt="Tribe Consulting Logo" class="tribe-logo">
           <h3 id="exp-tribe-title">Customer Support Executive — Tribe Consulting</h3>
@@ -178,8 +233,11 @@
             <li class="tl-item">Maintained service quality standards through collaboration and support.</li>
           </ul>
         </article>
+
+        <!-- TODO: You reuse aria-labelledby="exp-tribe-title" above.
+             Consider unique IDs per article for perfect accessibility. -->
         <article class="card two-col tilt" role="listitem" aria-labelledby="exp-tribe-title">
-          <img src="https://www.jaffer.com/images/logo-modified.png" alt="Tribe Consulting Logo" class="jaffer-logo">
+          <img src="https://www.jaffer.com/images/logo-modified.png" alt="Jaffer Brothers Logo" class="jaffer-logo">
           <h3 id="exp-tribe-title">Frontend Intern — Jaffer Brothers</h3>
           <p class="muted">Aug 2025 – Oct 2025</p>
           <ul class="timeline" aria-label="Key responsibilities">
@@ -190,9 +248,10 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- PROJECTS section -->
     <section id="projects" class="reveal" aria-labelledby="projects-heading">
       <div class="section-head"><h2 id="projects-heading">Projects</h2></div>
+
       <div class="grid" role="list">
         <article class="card two-col tilt" role="listitem" aria-labelledby="proj-hospital-title">
           <h3 id="proj-hospital-title">Hospital Website</h3>
@@ -204,6 +263,7 @@
             <span class="tag-pill" role="listitem">Accessibility</span>
           </div>
         </article>
+
         <article class="card two-col tilt" role="listitem" aria-labelledby="proj-hms-title">
           <h3 id="proj-hms-title">Hospital Management System (C++)</h3>
           <p class="muted">Console application</p>
@@ -217,10 +277,12 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- SKILLS section -->
     <section id="skills" class="reveal" aria-labelledby="skills-heading">
       <div class="section-head"><h2 id="skills-heading">Skills</h2></div>
+
       <div class="grid">
+        <!-- Frontend skills -->
         <article class="card three-col" aria-labelledby="skills-fe-title">
           <h3 id="skills-fe-title">Frontend</h3>
           <div class="tags" role="list" aria-label="Frontend technologies">
@@ -228,9 +290,11 @@
             <span class="tag-pill" role="listitem"><img src="Assets/Images/css_919826.png" alt="CSS Logo" class="skill-logo">CSS</span>
             <span class="tag-pill" role="listitem"><img src="Assets/Images/js_5968292.png" alt="JavaScript Logo" class="skill-logo">JavaScript (Basic)</span>
             <span class="tag-pill" role="listitem"><img src="Assets/Images/java_226777.png" alt="Java Logo" class="skill-logo">Java (Basic)</span>
-            <span class="tag-pill" role="listitem"><img src="Assets/Images/c_6132222.png" alt="Java Logo" class="skill-logo">C++</span>
+            <span class="tag-pill" role="listitem"><img src="Assets/Images/c_6132222.png" alt="C++ Logo" class="skill-logo">C++</span>
           </div>
         </article>
+
+        <!-- Tools -->
         <article class="card three-col" aria-labelledby="skills-tools-title">
           <h3 id="skills-tools-title">Design &amp; Tools</h3>
           <div class="tags" role="list" aria-label="Design tools">
@@ -239,6 +303,8 @@
             <span class="tag-pill" role="listitem"><img src="Assets/Images/office_732222.png" alt="MS Office Logo" class="skill-logo">MS Office</span>
           </div>
         </article>
+
+        <!-- Networking -->
         <article class="card three-col" aria-labelledby="skills-net-title">
           <h3 id="skills-net-title">Networking (Basic)</h3>
           <div class="tags" role="list" aria-label="Networking topics">
@@ -252,6 +318,8 @@
           </div>
         </article>
       </div>
+
+      <!-- Soft skills -->
       <div class="grid" style="margin-top:12px">
         <article class="card" aria-labelledby="soft-skills-title">
           <h3 id="soft-skills-title">Soft Skills &amp; Interests</h3>
@@ -260,10 +328,12 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT section -->
     <section id="contact" class="reveal" aria-labelledby="contact-heading">
       <div class="section-head"><h2 id="contact-heading">Contact</h2></div>
+
       <div class="grid">
+        <!-- Using <address> with normal font-style (overriding italics) -->
         <address class="card two-col" style="font-style: normal" aria-label="Contact details">
           <p><strong>Address:</strong> Gulistan-e-Johar, Karachi</p>
           <p><strong>Email:</strong> <a href="mailto:tahah2269@gmail.com">tahah****@gmail.com</a></p>
@@ -273,6 +343,7 @@
     </section>
   </main>
 
+  <!-- FOOTER with quick contact links and dynamic year -->
   <footer role="contentinfo">
     <div class="container">
       <nav aria-label="Footer">
@@ -285,10 +356,14 @@
     </div>
   </footer>
 
+  <!-- Floating Back-to-top button -->
   <button id="toTop" aria-label="Back to top">↑</button>
   <noscript><style>#toTop{display:none}</style></noscript>
 
+  <!-- Main JS bundle (deferred) -->
   <script src="script.js" defer></script>
+
+  <!-- Small inline helper: close mobile menu after clicking any nav link -->
   <script>
     // Close mobile menu after clicking a nav link
     document.querySelectorAll('nav a[data-spy]').forEach(a => {
