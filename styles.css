@@ -1,39 +1,52 @@
-/* =========================================================
-   SHAIIKH TAHA HUSSAIN — PORTFOLIO THEME (Consolidated)
-   ========================================================= */
+/* ==========================================================================
+   SHAIIKH TAHA HUSSAIN — PORTFOLIO THEME (Consolidated, documented)
+   ========================================================================== */
 
-/* ---------- Theme + tokens ---------- */
+/* --------------------------------------------------------------------------
+   THEME TOKENS (CSS custom properties)
+   - Centralized design tokens for color, spacing, radii, etc.
+   -------------------------------------------------------------------------- */
 :root {
   --bg: #1A122E;
-  /* page background */
+  /* Page background (deep indigo) */
   --panel: #2A1A4E;
-  /* panel bg */
+  /* Panel background */
   --text: #E0E0E0;
-  /* main text */
+  /* Primary text color */
   --muted: #ffffff;
-  /* secondary text */
+  /* Secondary / muted text color */
   --brand: #7127BA;
-  /* primary */
+  /* Primary brand color */
   --brand-2: #8F48D6;
-  /* primary alt */
+  /* Brand gradient companion */
   --accent: #FFFFFF;
-  /* accents */
+  /* High-contrast accents (text on brand) */
   --card: #201538;
-  /* card base */
+  /* Card surface base */
   --border: rgba(113, 39, 186, .30);
+  /* Subtle border color */
   --ring: rgba(113, 39, 186, .50);
+  /* Focus ring color */
   --maxw: 1100px;
+  /* Content max-width */
   --radius: 18px;
+  /* Default corner radius */
   --shadow: 0 10px 30px rgba(26, 18, 46, .45);
+  /* Elevation shadow */
   --ease: cubic-bezier(.2, .7, .2, 1);
+  /* Default easing */
 }
 
-/* ---------- Base ---------- */
+/* --------------------------------------------------------------------------
+     GLOBAL / BASE
+     -------------------------------------------------------------------------- */
 html,
 body {
   overflow-x: hidden;
+  /* Prevent horizontal scroll due to effects/overshoots */
 }
 
+/* Fixed full-screen video background (only shown on portfolio page variant) */
 #bg-video {
   position: fixed;
   top: 0;
@@ -42,21 +55,22 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  /* Sit behind everything */
 }
 
-
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Helvetica, Arial, sans-serif;
   color: var(--text);
+  /* Animated layered gradient background */
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(113, 39, 186, .18), transparent 50%),
     radial-gradient(900px 500px at 110% 10%, rgba(143, 72, 214, .15), transparent 40%),
@@ -66,78 +80,87 @@ body {
   animation: bgDrift 22s ease-in-out infinite;
 }
 
+/* Gradual drifting of the gradient blobs */
 @keyframes bgDrift {
   0% {
-    background-position: 0 0, 0 0, 0 0
+    background-position: 0 0, 0 0, 0 0;
   }
 
   50% {
-    background-position: 4% -2%, -3% 2%, 0 0
+    background-position: 4% -2%, -3% 2%, 0 0;
   }
 
   100% {
-    background-position: 0 0, 0 0, 0 0
+    background-position: 0 0, 0 0, 0 0;
   }
 }
 
-/* On portfolio page, show the fixed bg video and not the animated gradient */
+/* On portfolio page, keep video visible and stop gradient animation */
 body[data-page="portfolio"] {
   background: var(--bg);
-  /* solid fallback under video */
+  /* Fallback visible under video */
   animation: none;
 }
 
 a {
   color: inherit;
-  text-decoration: none
+  text-decoration: none;
 }
 
-/* ---------- Layout ---------- */
+/* --------------------------------------------------------------------------
+     LAYOUT PRIMITIVES
+     -------------------------------------------------------------------------- */
 .container {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 20px
+  padding: 0 20px;
 }
 
 section {
-  padding: 28px 0
+  padding: 28px 0;
 }
 
 .section-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px
+  margin-bottom: 16px;
 }
 
 .section-head h2,
 .section-head h3 {
-  margin: 0
+  margin: 0;
 }
 
 .section-head h3 {
   font-size: 20px;
-  letter-spacing: .2px
+  letter-spacing: .2px;
 }
 
 .rule {
   height: 1px;
   background: var(--border);
-  margin-top: 10px
+  margin-top: 10px;
 }
 
-/* ---------- Grid ---------- */
+/* --------------------------------------------------------------------------
+     GRID SYSTEM (12-col)
+     -------------------------------------------------------------------------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px
+  gap: 16px;
 }
 
 .card {
-  grid-column: span 12
+  grid-column: span 12;
 }
 
-/* ---------- Header / Nav ---------- */
+/* Full width by default */
+
+/* --------------------------------------------------------------------------
+     HEADER / NAVIGATION (sticky, glassy)
+     -------------------------------------------------------------------------- */
 header.site {
   position: sticky;
   top: 0;
@@ -148,6 +171,7 @@ header.site {
   box-shadow: 0 10px 30px rgba(0, 0, 0, .30), inset 0 1px 0 rgba(255, 255, 255, .05);
 }
 
+/* Subtle glint line when hovering the header */
 header.site::after {
   content: "";
   position: absolute;
@@ -161,22 +185,22 @@ header.site::after {
 }
 
 header.site:hover::after {
-  animation: headerGlint 1.8s ease forwards
+  animation: headerGlint 1.8s ease forwards;
 }
 
 @keyframes headerGlint {
   0% {
     opacity: 0;
-    transform: translateX(-30%)
+    transform: translateX(-30%);
   }
 
   20% {
-    opacity: .7
+    opacity: .7;
   }
 
   100% {
     opacity: 0;
-    transform: translateX(30%)
+    transform: translateX(30%);
   }
 }
 
@@ -184,13 +208,13 @@ header.site:hover::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0
+  padding: 14px 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px
+  gap: 12px;
 }
 
 .brand .avatar .profile-logo {
@@ -200,12 +224,12 @@ header.site:hover::after {
 .brand h1 {
   font-size: 16px;
   letter-spacing: .4px;
-  margin: 0
+  margin: 0;
 }
 
 .brand .muted {
   color: var(--muted);
-  font-size: 12px
+  font-size: 12px;
 }
 
 nav ul {
@@ -213,9 +237,10 @@ nav ul {
   list-style: none;
   gap: 18px;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
+/* Nav links with underline grow + background wash on hover/active */
 nav a {
   padding: 8px 12px;
   border-radius: 10px;
@@ -232,12 +257,12 @@ nav a:hover,
 nav a:focus {
   outline: none;
   color: var(--accent);
-  background: rgba(113, 39, 186, .08)
+  background: rgba(113, 39, 186, .08);
 }
 
 nav a:hover,
 nav a.active {
-  background-position: 0 95%
+  background-position: 0 95%;
 }
 
 nav a::after {
@@ -256,19 +281,25 @@ nav a::after {
 
 nav a:hover::after,
 nav a.active::after {
-  transform: scaleX(1)
+  transform: scaleX(1);
 }
 
 .cta {
   display: flex;
-  gap: 10px
+  gap: 10px;
 }
 
+/* Right-side actions (menu / logout etc.) */
+
 .menu {
-  display: none
+  display: none;
 }
- 
-/* ---------- Hero ---------- */
+
+/* Mobile menu button (shown via media query) */
+
+/* --------------------------------------------------------------------------
+     HERO (intro card with image + text + chips)
+     -------------------------------------------------------------------------- */
 .hero {
   display: flex;
   flex-direction: column;
@@ -283,6 +314,7 @@ nav a.active::after {
   height: auto;
   margin: 0 auto 28px;
   aspect-ratio: 1/1;
+  /* Keep avatar square */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,6 +343,7 @@ nav a.active::after {
   margin: 0 auto;
 }
 
+/* Small badge-like label */
 .tag {
   display: inline-flex;
   gap: 8px;
@@ -320,13 +353,14 @@ nav a.active::after {
   border: 1px dashed var(--border);
   padding: 6px 10px;
   border-radius: 999px;
-  will-change: transform
+  will-change: transform;
 }
 
 .tag:hover {
-  transform: translateY(-2px)
+  transform: translateY(-2px);
 }
 
+/* Gradient title that gently sweeps left/right */
 .hero h2 {
   font-size: 40px;
   line-height: 1.15;
@@ -343,31 +377,33 @@ nav a.active::after {
 
   0%,
   100% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 
   50% {
-    background-position: 100% 50%
+    background-position: 100% 50%;
   }
 }
 
 .hero p {
   color: var(--muted);
-  font-size: 16px
+  font-size: 16px;
 }
 
 .quick {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 18px
+  margin-top: 18px;
 }
 
-/* ---------- Tags/Chips ---------- */
+/* --------------------------------------------------------------------------
+     TAGS / CHIPS
+     -------------------------------------------------------------------------- */
 .tags {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
 .tag-pill {
@@ -385,9 +421,10 @@ nav a.active::after {
 .tag-pill:hover {
   transform: translateY(-2px);
   border-color: rgba(113, 39, 186, .5);
-  box-shadow: 0 8px 20px rgba(113, 39, 186, .25)
+  box-shadow: 0 8px 20px rgba(113, 39, 186, .25);
 }
 
+/* Glossy chip with light sweep on hover */
 .chip {
   font-size: 13px;
   border: 1px solid rgba(255, 255, 255, .18);
@@ -413,10 +450,12 @@ nav a.active::after {
 
 .chip:hover::before {
   opacity: .6;
-  transform: translateX(0%)
+  transform: translateX(0%);
 }
 
-/* ---------- Panels & Cards (glassy + glossy) ---------- */
+/* --------------------------------------------------------------------------
+     SURFACES: PANELS & CARDS (glassy + glossy accents)
+     -------------------------------------------------------------------------- */
 .panel,
 .card,
 .btn,
@@ -453,22 +492,22 @@ header.site {
 .card h4 {
   margin: 0 0 6px;
   font-size: 16px;
-  letter-spacing: .2px
+  letter-spacing: .2px;
 }
 
 .card p {
   margin: 6px 0;
   color: var(--muted);
-  font-size: 14px
+  font-size: 14px;
 }
 
 .card:hover {
   transform: translateY(-6px);
   border-color: rgba(113, 39, 186, .45);
-  box-shadow: 0 14px 36px rgba(26, 18, 46, .55)
+  box-shadow: 0 14px 36px rgba(26, 18, 46, .55);
 }
 
-/* glossy border */
+/* Outer glossy border (shows on hover) */
 .card::before {
   content: "";
   position: absolute;
@@ -486,10 +525,10 @@ header.site {
 }
 
 .card:hover::before {
-  opacity: .6
+  opacity: .6;
 }
 
-/* light sweep */
+/* Light sweep across card on hover */
 .card::after {
   content: "";
   position: absolute;
@@ -501,22 +540,24 @@ header.site {
 }
 
 .card:hover::after {
-  transform: translateX(120%)
+  transform: translateX(120%);
 }
 
-/* Contact: full width & horizontal border gradient */
+/* Contact section: full-width grid behavior + horizontal gradient border */
 #contact .two-col {
-  grid-column: 1 / -1
+  grid-column: 1 / -1;
 }
 
 #contact .card::before {
   background: linear-gradient(90deg, rgba(113, 39, 186, .6) 0%, rgba(143, 72, 214, .25) 50%, rgba(113, 39, 186, .6) 100%);
 }
 
-/* ---------- Timeline ---------- */
+/* --------------------------------------------------------------------------
+     TIMELINE (vertical with pulsing nodes)
+     -------------------------------------------------------------------------- */
 .timeline {
   position: relative;
-  padding-left: 18px
+  padding-left: 18px;
 }
 
 .timeline::before {
@@ -532,7 +573,7 @@ header.site {
 .tl-item {
   position: relative;
   padding-left: 16px;
-  margin-bottom: 16px
+  margin-bottom: 16px;
 }
 
 .tl-item:before {
@@ -552,15 +593,17 @@ header.site {
 
   0%,
   100% {
-    box-shadow: 0 0 0 4px rgba(113, 39, 186, .15)
+    box-shadow: 0 0 0 4px rgba(113, 39, 186, .15);
   }
 
   50% {
-    box-shadow: 0 0 0 8px rgba(113, 39, 186, .08)
+    box-shadow: 0 0 0 8px rgba(113, 39, 186, .08);
   }
 }
 
-/* ---------- Buttons (glass + sheen + ripple) ---------- */
+/* --------------------------------------------------------------------------
+     BUTTONS (glass + sheen + click ripple)
+     -------------------------------------------------------------------------- */
 .btn,
 #logoutButton {
   border: 1px solid rgba(255, 255, 255, .22);
@@ -582,7 +625,7 @@ header.site {
   box-shadow: 0 12px 28px rgba(113, 39, 186, .38), 0 0 0 3px rgba(255, 255, 255, .08) inset;
 }
 
-/* sheen */
+/* Sheen pass on hover */
 .btn::before,
 #logoutButton::before {
   content: "";
@@ -598,10 +641,10 @@ header.site {
 
 .btn:hover::before,
 #logoutButton:hover::before {
-  transform: translateX(140%)
+  transform: translateX(140%);
 }
 
-/* ripple */
+/* Press ripple effect (uses custom properties --x/--y set by JS) */
 .btn::after,
 #logoutButton::after {
   content: "";
@@ -618,10 +661,12 @@ header.site {
 .btn:active::after,
 #logoutButton:active::after {
   transform: scale(3.2);
-  opacity: 1
+  opacity: 1;
 }
 
-/* ---------- Images in pills/cards ---------- */
+/* --------------------------------------------------------------------------
+     LOGOS / IMAGES IN PILLS & CARDS
+     -------------------------------------------------------------------------- */
 .skill-logo,
 .education-logo,
 .experience-logo,
@@ -651,7 +696,8 @@ header.site {
 }
 
 .jaffer-logo {
-  width: 8vw;
+  width: 10vw;
+  /* Scales with viewport */
   margin-right: 6px;
   vertical-align: middle;
   transform: translateY(1px);
@@ -668,10 +714,12 @@ header.site {
 .card.two-col.tilt .exp-logo {
   width: 50px;
   height: 50px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
-/* ---------- Helpers: reveal + progress + toTop ---------- */
+/* --------------------------------------------------------------------------
+     HELPERS (scroll progress, reveal-on-scroll, back-to-top)
+     -------------------------------------------------------------------------- */
 #scrollProgress {
   position: fixed;
   top: 0;
@@ -681,22 +729,22 @@ header.site {
   background: linear-gradient(90deg, var(--brand), var(--brand-2));
   z-index: 999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
-  transition: width .15s linear
+  transition: width .15s linear;
 }
 
+/* Reveal utility: start hidden & lifted, then animate in via .show */
 .reveal {
   opacity: 0;
-  transform: translateY(16px)
+  transform: translateY(16px);
 }
 
 .reveal.show {
-  
   opacity: 1;
- 
   transform: none;
-  transition: opacity .6s var(--ease), transform .6s var(--ease)
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
 }
 
+/* Floating "back to top" button with bobbing idle animation */
 #toTop {
   position: fixed;
   right: 18px;
@@ -720,23 +768,23 @@ header.site {
 #toTop.show {
   opacity: 1;
   pointer-events: auto;
-  animation: toTopIn .3s var(--ease), bob 4s ease-in-out infinite
+  animation: toTopIn .3s var(--ease), bob 4s ease-in-out infinite;
 }
 
 #toTop:hover {
   transform: translateY(-3px);
-  background: rgba(113, 39, 186, .45)
+  background: rgba(113, 39, 186, .45);
 }
 
 @keyframes toTopIn {
   from {
     transform: translateY(12px);
-    opacity: 0
+    opacity: 0;
   }
 
   to {
     transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -744,92 +792,112 @@ header.site {
 
   0%,
   100% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-2px)
+    transform: translateY(-2px);
   }
 }
 
-/* ---------- Footer ---------- */
+/* --------------------------------------------------------------------------
+     FOOTER
+     -------------------------------------------------------------------------- */
 footer {
   padding: 36px 0 60px;
   color: var(--muted);
-  text-align: center
+  text-align: center;
 }
 
 .links {
   display: flex;
   justify-content: center;
   gap: 12px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
-/* ---------- Accessibility ---------- */
+/* --------------------------------------------------------------------------
+     ACCESSIBILITY & MOTION PREFERENCES
+     -------------------------------------------------------------------------- */
 :focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px var(--ring);
-  border-radius: 12px
+  border-radius: 12px;
 }
 
+/* Respect reduced-motion: disable animations/transitions where possible */
 @media (prefers-reduced-motion:reduce) {
   * {
     animation: none !important;
-    transition: none !important
+    transition: none !important;
   }
 
   header.site:hover::after {
-    animation: none !important
+    animation: none !important;
   }
 }
 
-/* ---------- Responsive ---------- */
+/* --------------------------------------------------------------------------
+     RESPONSIVE
+     NOTE: There is an empty @media (max-width:900px) block below in your code.
+           The following mobile-nav styles are currently *outside* any media query,
+           so they will apply globally. If you intended them to be mobile-only,
+           wrap them inside the media query.
+     -------------------------------------------------------------------------- */
+
 /* ====================== MOBILE NAV (<=900px) ====================== */
-@media (max-width:900px) {}
+@media (max-width:900px) {
+  /* ^ This block is empty. Consider moving the mobile nav rules below into it. */
 
-.hero {
-  grid-template-columns: 1fr
-}
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
-.two-col,
-.three-col {
-  grid-column: span 12
-}
+  /* Single-column hero on small screens */
 
-/* base: hide inline list, show Menu button */
-nav ul {
-  display: none
-}
+  .two-col,
+  .three-col {
+    grid-column: span 12;
+  }
 
-/* keep header row as the positioning anchor */
-.nav {
-  position: relative;
-}
+  nav ul {
+    display: none;
+  }
 
-/* keep .cta (Menu/Logout area) above the dropdown so it's always tappable */
-.cta {
-  position: relative;
-  z-index: 10000;
-}
+  /* Hide inline nav list (use menu button) */
 
-.menu {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid rgba(255, 255, 255, .16);
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 12px;
-  background: rgba(113, 39, 186, .28);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 6px 16px rgba(113, 39, 186, .25);
-  transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+  .nav {
+    position: relative;
+  }
+
+  /* Anchor for absolute dropdown */
+
+  .cta {
+    /* Keep Menu/Logout tappable above dropdown */
+    position: relative;
+    z-index: 10000;
+  }
+
+  /* Mobile menu button (glass look), toggled via [aria-expanded] */
+  .menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, .16);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: rgba(113, 39, 186, .28);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 6px 16px rgba(113, 39, 186, .25);
+    transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+  }
+
 }
 
 .menu:hover {
-  box-shadow: 0 10px 22px rgba(0, 0, 0, .28)
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .28);
 }
 
 .menu::after {
@@ -843,26 +911,22 @@ nav ul {
   content: "✕";
 }
 
-/* OPEN STATE: glossy dropdown — anchored BELOW the header row */
+/* Dropdown (OPEN STATE) — positioned below the header row */
 .nav.open ul {
   display: flex;
   position: absolute;
-
-  /* put the menu *below* the nav row (so it never covers the button) */
   top: calc(65% + 8px);
-  /* 👈 below the .nav container */
+  /* Place the menu BELOW the .nav row */
   right: 12px;
-
   z-index: 9999;
+
   flex-direction: column;
   gap: 6px;
-
-  /* size a bit smaller */
   min-width: 180px;
   max-width: 75vw;
   padding: 8px;
 
-  /* glass look */
+  /* Glassy surface */
   background: linear-gradient(180deg, rgba(32, 21, 56, .82), rgba(42, 26, 78, .86));
   border: 1px solid rgba(255, 255, 255, .14);
   border-radius: 14px;
@@ -873,7 +937,6 @@ nav ul {
 
   transform-origin: top right;
   animation: menuIn .18s var(--ease);
-
 }
 
 @keyframes menuIn {
@@ -888,7 +951,7 @@ nav ul {
   }
 }
 
-/* glossy border sweep */
+/* Glossy border sweep */
 .nav.open ul::before {
   content: "";
   position: absolute;
@@ -904,14 +967,12 @@ nav ul {
   pointer-events: none;
 }
 
-/* little caret now points upward (since menu is below the button) */
+/* Upward-pointing caret (since dropdown sits below the button) */
 .nav.open ul::after {
   content: "";
   position: absolute;
   top: -6px;
-  /* sits above the dropdown box */
   right: 28px;
-  /* aligns toward the Menu button */
   width: 10px;
   height: 10px;
   background: inherit;
@@ -922,7 +983,7 @@ nav ul {
   backdrop-filter: inherit;
 }
 
-/* links */
+/* Dropdown links */
 .nav.open ul a {
   display: block;
   padding: 9px 12px;
@@ -941,13 +1002,14 @@ nav ul {
   transform: translateY(-1px);
 }
 
-/* Adjustments for smaller screens */
+/* Additional small-screen tweaks */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column; /* Image on top, then content */
+    flex-direction: column;
     text-align: center;
   }
 
+  /* Image on top, then text */
   .hero-image {
     margin: 0 auto 20px;
   }
@@ -957,28 +1019,29 @@ nav ul {
     width: 100%;
   }
 
-  .tribe-logo
- {
+  .tribe-logo {
     width: 60px;
   }
-  .jaffer-logo{
+
+  .jaffer-logo {
     width: 100px;
   }
 }
 
-/* Respect iPhone safe-area (notch) */
+/* Respect iPhone safe-area (notch) inside header container */
 header.site .container {
   padding-left: calc(20px + env(safe-area-inset-left));
   padding-right: calc(20px + env(safe-area-inset-right));
 }
 
-
-/* ---------- Section target highlight ---------- */
+/* --------------------------------------------------------------------------
+     SECTION TARGET HIGHLIGHT (when using #hash links)
+     -------------------------------------------------------------------------- */
 section:target .section-head h3 {
   color: #fff;
-  text-shadow: 0 6px 18px rgba(143, 72, 214, .35)
+  text-shadow: 0 6px 18px rgba(143, 72, 214, .35);
 }
 
 section:target .rule {
-  box-shadow: 0 0 0 3px rgba(113, 39, 186, .25) inset
+  box-shadow: 0 0 0 3px rgba(113, 39, 186, .25) inset;
 }
