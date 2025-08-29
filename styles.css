@@ -38,8 +38,8 @@
 }
 
 /* --------------------------------------------------------------------------
-     GLOBAL / BASE
-     -------------------------------------------------------------------------- */
+       GLOBAL / BASE
+       -------------------------------------------------------------------------- */
 html,
 body {
   overflow-x: hidden;
@@ -108,8 +108,8 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-     LAYOUT PRIMITIVES
-     -------------------------------------------------------------------------- */
+       LAYOUT PRIMITIVES
+       -------------------------------------------------------------------------- */
 .container {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -144,8 +144,8 @@ section {
 }
 
 /* --------------------------------------------------------------------------
-     GRID SYSTEM (12-col)
-     -------------------------------------------------------------------------- */
+       GRID SYSTEM (12-col)
+       -------------------------------------------------------------------------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -159,8 +159,8 @@ section {
 /* Full width by default */
 
 /* --------------------------------------------------------------------------
-     HEADER / NAVIGATION (sticky, glassy)
-     -------------------------------------------------------------------------- */
+       HEADER / NAVIGATION (sticky, glassy)
+       -------------------------------------------------------------------------- */
 header.site {
   position: sticky;
   top: 0;
@@ -298,8 +298,8 @@ nav a.active::after {
 /* Mobile menu button (shown via media query) */
 
 /* --------------------------------------------------------------------------
-     HERO (intro card with image + text + chips)
-     -------------------------------------------------------------------------- */
+       HERO (intro card with image + text + chips)
+       -------------------------------------------------------------------------- */
 .hero {
   display: flex;
   flex-direction: column;
@@ -398,8 +398,8 @@ nav a.active::after {
 }
 
 /* --------------------------------------------------------------------------
-     TAGS / CHIPS
-     -------------------------------------------------------------------------- */
+       TAGS / CHIPS
+       -------------------------------------------------------------------------- */
 .tags {
   display: flex;
   gap: 8px;
@@ -454,8 +454,8 @@ nav a.active::after {
 }
 
 /* --------------------------------------------------------------------------
-     SURFACES: PANELS & CARDS (glassy + glossy accents)
-     -------------------------------------------------------------------------- */
+       SURFACES: PANELS & CARDS (glassy + glossy accents)
+       -------------------------------------------------------------------------- */
 .panel,
 .card,
 .btn,
@@ -553,8 +553,8 @@ header.site {
 }
 
 /* --------------------------------------------------------------------------
-     TIMELINE (vertical with pulsing nodes)
-     -------------------------------------------------------------------------- */
+       TIMELINE (vertical with pulsing nodes)
+       -------------------------------------------------------------------------- */
 .timeline {
   position: relative;
   padding-left: 18px;
@@ -589,6 +589,14 @@ header.site {
   animation: pulse 2.2s ease-in-out infinite;
 }
 
+.timeline ul,
+.timeline li,
+.tl-item {
+  list-style: none;
+  /* remove default bullet */
+}
+
+
 @keyframes pulse {
 
   0%,
@@ -602,8 +610,8 @@ header.site {
 }
 
 /* --------------------------------------------------------------------------
-     BUTTONS (glass + sheen + click ripple)
-     -------------------------------------------------------------------------- */
+       BUTTONS (glass + sheen + click ripple)
+       -------------------------------------------------------------------------- */
 .btn,
 #logoutButton {
   border: 1px solid rgba(255, 255, 255, .22);
@@ -665,8 +673,8 @@ header.site {
 }
 
 /* --------------------------------------------------------------------------
-     LOGOS / IMAGES IN PILLS & CARDS
-     -------------------------------------------------------------------------- */
+       LOGOS / IMAGES IN PILLS & CARDS
+       -------------------------------------------------------------------------- */
 .skill-logo,
 .education-logo,
 .experience-logo,
@@ -718,8 +726,8 @@ header.site {
 }
 
 /* --------------------------------------------------------------------------
-     HELPERS (scroll progress, reveal-on-scroll, back-to-top)
-     -------------------------------------------------------------------------- */
+       HELPERS (scroll progress, reveal-on-scroll, back-to-top)
+       -------------------------------------------------------------------------- */
 #scrollProgress {
   position: fixed;
   top: 0;
@@ -801,8 +809,8 @@ header.site {
 }
 
 /* --------------------------------------------------------------------------
-     FOOTER
-     -------------------------------------------------------------------------- */
+       FOOTER
+       -------------------------------------------------------------------------- */
 footer {
   padding: 36px 0 60px;
   color: var(--muted);
@@ -817,8 +825,8 @@ footer {
 }
 
 /* --------------------------------------------------------------------------
-     ACCESSIBILITY & MOTION PREFERENCES
-     -------------------------------------------------------------------------- */
+       ACCESSIBILITY & MOTION PREFERENCES
+       -------------------------------------------------------------------------- */
 :focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px var(--ring);
@@ -838,12 +846,12 @@ footer {
 }
 
 /* --------------------------------------------------------------------------
-     RESPONSIVE
-     NOTE: There is an empty @media (max-width:900px) block below in your code.
-           The following mobile-nav styles are currently *outside* any media query,
-           so they will apply globally. If you intended them to be mobile-only,
-           wrap them inside the media query.
-     -------------------------------------------------------------------------- */
+       RESPONSIVE
+       NOTE: There is an empty @media (max-width:900px) block below in your code.
+             The following mobile-nav styles are currently *outside* any media query,
+             so they will apply globally. If you intended them to be mobile-only,
+             wrap them inside the media query.
+       -------------------------------------------------------------------------- */
 
 /* ====================== MOBILE NAV (<=900px) ====================== */
 @media (max-width:900px) {
@@ -1035,8 +1043,8 @@ header.site .container {
 }
 
 /* --------------------------------------------------------------------------
-     SECTION TARGET HIGHLIGHT (when using #hash links)
-     -------------------------------------------------------------------------- */
+       SECTION TARGET HIGHLIGHT (when using #hash links)
+       -------------------------------------------------------------------------- */
 section:target .section-head h3 {
   color: #fff;
   text-shadow: 0 6px 18px rgba(143, 72, 214, .35);
